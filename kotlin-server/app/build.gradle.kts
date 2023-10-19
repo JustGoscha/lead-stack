@@ -29,18 +29,23 @@ dependencies {
 
     // This dependency is used by the application.
     implementation("com.google.guava:guava:32.1.1-jre")
+
+    // Webserver
+    implementation("io.ktor:ktor-server-netty:1.6.2")
+    implementation("io.ktor:ktor-server-core:1.6.2")
+
 }
 
 // Apply a specific Java toolchain to ease working on different environments.
 java {
     toolchain {
-        languageVersion.set(JavaLanguageVersion.of(21))
+        languageVersion.set(JavaLanguageVersion.of(20))
     }
 }
 
 application {
     // Define the main class for the application.
-    mainClass.set("kotlin.app.AppKt")
+    mainClass.set("kotlin.server.AppKt")
 }
 
 tasks.named<Test>("test") {
